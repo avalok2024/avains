@@ -1,0 +1,200 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  /* Container for centering content */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #000;
+    padding: 20px 0;
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .menu a:hover {
+    color: #ccc;
+  }
+  
+  .search-icon {
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .search-icon:hover {
+    color: #ccc;
+  }
+  
+  /* Hamburger Menu (Hidden by Default) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hero Section Styles */
+  .hero {
+    background-image: url('your-image.jpg'); /* Add your image path here */
+    background-size: cover; /* Ensures the image covers the entire hero section */
+    background-position: center; /* Centers the image */
+    color: #fff;
+    padding: 150px 0;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Dark Overlay for Better Readability */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  }
+  
+  .hero .container {
+    position: relative;
+    z-index: 1; /* Ensures content is above the overlay */
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px; /* Prevents text from touching the edges */
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ccc;
+    line-height: 1.6; /* Improves readability */
+  }
+  
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ccc;
+    color: #000;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .menu {
+      position: fixed; /* Cover the entire page */
+      top: 70px; /* Adjust based on header height */
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 20px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+      z-index: 1000; /* Above other content */
+    }
+  
+    .menu.active {
+      transform: translateX(0); /* Slide in from the right */
+    }
+  
+    .menu::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+      z-index: 999; /* Below the menu */
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .search-icon {
+      margin-left: auto;
+      margin-right: 20px;
+    }
+  
+    .hero {
+      padding: 100px 0; /* Reduce padding for smaller screens */
+    }
+  
+    .hero h1 {
+      font-size: 36px; /* Reduce font size for smaller screens */
+    }
+  
+    .hero p {
+      font-size: 16px; /* Reduce font size for smaller screens */
+    }
+  }
