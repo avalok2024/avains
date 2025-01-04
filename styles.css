@@ -41,6 +41,7 @@
     display: flex;
     gap: 30px;
     align-items: center;
+    transition: transform 0.3s ease-in-out;
   }
   
   .menu a {
@@ -66,7 +67,7 @@
     color: #ccc;
   }
   
-  /* Hamburger Menu (Hidden by Default) */
+  /* Hamburger Menu */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -83,16 +84,15 @@
   
   /* Hero Section Styles */
   .hero {
-    background-image: url('your-image.jpg'); /* Add your image path here */
-    background-size: cover; /* Ensures the image covers the entire hero section */
-    background-position: center; /* Centers the image */
+    background-image: url('assets/images/bg-image.jpg');
+    background-size: cover;
+    background-position: center;
     color: #fff;
     padding: 150px 0;
     text-align: center;
     position: relative;
   }
   
-  /* Dark Overlay for Better Readability */
   .hero::before {
     content: '';
     position: absolute;
@@ -100,18 +100,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    background-color: rgba(0, 0, 0, 0.5);
   }
   
   .hero .container {
     position: relative;
-    z-index: 1; /* Ensures content is above the overlay */
+    z-index: 1;
   }
   
   .hero-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px; /* Prevents text from touching the edges */
+    padding: 0 20px;
   }
   
   .hero h1 {
@@ -124,7 +124,7 @@
     font-size: 18px;
     margin-bottom: 30px;
     color: #ccc;
-    line-height: 1.6; /* Improves readability */
+    line-height: 1.6;
   }
   
   .cta-button {
@@ -147,8 +147,8 @@
   /* Responsive Design */
   @media (max-width: 768px) {
     .menu {
-      position: fixed; /* Cover the entire page */
-      top: 70px; /* Adjust based on header height */
+      position: fixed;
+      top: 70px;
       left: 0;
       right: 0;
       bottom: 0;
@@ -158,27 +158,16 @@
       justify-content: flex-start;
       padding-top: 20px;
       transform: translateX(100%);
-      transition: transform 0.3s ease-in;
-      z-index: 1000; /* Above other content */
+      z-index: 1000;
     }
   
     .menu.active {
-      transform: translateX(0); /* Slide in from the right */
-    }
-  
-    .menu::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      /* background-color: rgba(0, 0, 0, 0.7);  */
-      z-index: 999; /* Below the menu */
+      transform: translateX(0);
     }
   
     .hamburger {
       display: flex;
+      z-index: 1001;
     }
   
     .search-icon {
@@ -187,14 +176,15 @@
     }
   
     .hero {
-      padding: 100px 0; /* Reduce padding for smaller screens */
+      padding: 100px 0;
     }
   
     .hero h1 {
-      font-size: 36px; /* Reduce font size for smaller screens */
+      font-size: 36px;
     }
   
     .hero p {
-      font-size: 16px; /* Reduce font size for smaller screens */
+      font-size: 16px;
     }
   }
+  
